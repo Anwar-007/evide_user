@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
         resizeToAvoidBottomInset: false,
         body: SafeArea(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
@@ -105,6 +105,52 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: screenWidth * 0.03,
+                    vertical: screenHeight * 0.015),
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [Colors.blue, Colors.purple],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  padding: EdgeInsets.all(screenWidth * 0.04),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Plan your ride',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: screenWidth * 0.06,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Gap(screenHeight * 0.005),
+                            Text(
+                              'Search routes and get live updates',
+                              style: TextStyle(
+                                color: Colors.white70,
+                                fontSize: screenWidth * 0.035,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(width: screenWidth * 0.02),
+                      Icon(Icons.directions_bus,
+                          color: Colors.white, size: screenWidth * 0.12),
+                    ],
+                  ),
+                ),
+              ),
               Expanded(
                 child: SingleChildScrollView(
                   child: Builder(
@@ -118,18 +164,33 @@ class _HomePageState extends State<HomePage> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             SearchBoxWrapper(),
-                            // Gap(screenHeight * 0.02),
-                            // const CardButonWrapper(),
+                            Gap(screenHeight * 0.02),
                             Padding(
                               padding: EdgeInsets.symmetric(
                                   horizontal: screenWidth * 0.05),
-                              child: Text(
-                                "Let's get news updates",
-                                style: TextStyle(
-                                  color: textColor,
-                                  fontSize: screenWidth * 0.05,
-                                  fontWeight: FontWeight.bold,
+                              child: GradientText(
+                                'Quick actions',
+                                gradient: const LinearGradient(
+                                  colors: [Colors.blue, Colors.purple],
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
                                 ),
+                                fontSize: screenWidth * 0.05,
+                              ),
+                            ),
+                            Gap(screenHeight * 0.01),
+                            const CardButonWrapper(),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: screenWidth * 0.05),
+                              child: GradientText(
+                                'Latest news',
+                                gradient: const LinearGradient(
+                                  colors: [Colors.blue, Colors.purple],
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                ),
+                                fontSize: screenWidth * 0.05,
                               ),
                             ),
                             NewsTileWidget(),
