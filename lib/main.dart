@@ -37,6 +37,7 @@ class MyApp extends StatelessWidget {
           '/home': (context) => const HomePageWrapper(),
           '/searchresult': (context) => SearchresultWrapper(),
           '/showtimeline': (context) => TimelineWrapper(),
-        });
+        },
+      );
   }
 }
