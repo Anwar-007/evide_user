@@ -1,7 +1,24 @@
 import 'package:evide_user/core/utils/app_imports.dart';
+import 'package:evide_user/features/evide_home/pages/evide_home_page.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+
+  @override
+  void initState() {
+    Future.delayed(Duration(seconds: 3), () {
+      AppGlobalKeys.navigatorKey.currentState?.pushReplacement(MaterialPageRoute(builder: (context) {
+        return EvideHomePage();
+      },));
+    },);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
