@@ -40,8 +40,13 @@ class HomePageSearchBar extends StatelessWidget {
             indent: 6,
             color: const Color.fromARGB(255, 193, 193, 193),
           ),
-          SizedBox(width: 5.w,),
-          Image.asset(AppAssets.searchIcon, width: 20.w, height: 20.h),
+          AppConstraints.kHeight5,
+          Image.asset(
+            AppAssets.searchIcon,
+            width: 20.w,
+            height: 20.h,
+            color: Colors.purple,
+          ),
         ],
       ),
     );

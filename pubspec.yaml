@@ -50,6 +50,7 @@ dependencies:
   firebase_app_check: ^0.3.2+10
   flutter_screenutil: ^5.9.3
   get_it: ^8.2.0
+  flutter_svg: ^2.0.9
 
 
 dev_dependencies:
@@ -78,6 +79,7 @@ flutter:
   assets:
     - asset/images/
     - asset/icons/
+    - asset/fonts/
     - asset/Artboard.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -91,15 +93,15 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: asset/fonts/Poppins-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
+    - family: Belanosima
+      fonts:
+        - asset: asset/fonts/Belanosima-Regular.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
